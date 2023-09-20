@@ -1039,10 +1039,6 @@ h2 {
   text-align: center;
 }
 
-.register__card:last-child {
-  box-shadow: 4px 4px 30px 4px rgba(0, 0, 0, 0.5);
-}
-
 .card-register__img {
   margin-left: 1.1875rem;
   margin-right: 2.0625rem;
