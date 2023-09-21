@@ -75,7 +75,6 @@ body {
 }
 
 .lock body {
-  overflow: hidden;
   -ms-touch-action: none;
   touch-action: none;
   overflow-behavior: none;
@@ -738,14 +737,14 @@ h2 {
   font-size: 1.5625rem;
 }
 
-.menu-opened .menu-header__body {
-  -ms-transform: translateX(0);
-  transform: translateX(0);
-}
-
 .header__menu {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+}
+
+.menu-opened .menu-header__body {
+  -ms-transform: translateX(0);
+  transform: translateX(0);
 }
 
 .menu-header__body .menu {
@@ -807,6 +806,22 @@ h2 {
 
 .operators {
   margin-bottom: 8.25rem;
+}
+
+.operators__container {
+  position: relative;
+}
+
+.operators__container:before {
+  content: "";
+  position: absolute;
+  left: -33rem;
+  top: 13.875rem;
+  width: 49.4375rem;
+  height: 46.6875rem;
+  border-radius: 49.4375rem;
+  background: rgba(188, 211, 77, 0.4);
+  filter: blur(125px);
 }
 
 .operators__content {
@@ -1271,13 +1286,17 @@ h2 {
 }
 
 @media only screen and (min-width: 70.9375em) {
+  .menu-header__body {
+    left: calc((100% - 1135px) / 2);
+  }
+
   .top-section__image {
     -ms-flex-negative: 0;
     flex-shrink: 0;
   }
 }
 
-@media only screen and (min-width: 85.375em) {
+@media only screen and (min-width: 85.37375em) {
   .toggle-mnu {
     display: none;
   }
@@ -1351,23 +1370,9 @@ h2 {
     -ms-flex-pack: justify;
     justify-content: space-between;
   }
-
-  .menu-header__body {
-    top: 3.75rem;
-  }
-
-  .menu-header__body .menu {
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding-left: 15px;
-  }
-
-  .header__actions {
-    margin-right: 3.125rem;
-  }
 }
 
-@media screen and (max-width: 85.375em) {
+@media screen and (max-width: 85.37375em) {
   .menu-header__body {
     position: fixed;
     top: 0;
@@ -1379,6 +1384,21 @@ h2 {
     -ms-transform: translateX(-100%);
     transform: translateX(-100%);
     overflow-y: auto;
+  }
+}
+
+@media only screen and (max-width: 85.37375em) {
+  .menu-header__body {
+    top: 7.5rem;
+  }
+
+  .menu-header__body .menu {
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .header__actions {
+    margin-right: 3.125rem;
   }
 }
 
@@ -1520,7 +1540,17 @@ h2 {
   }
 }
 
+@media only screen and (max-width: 70.9375em) {
+  .menu-header__body .menu {
+    padding-left: 15px;
+  }
+}
+
 @media only screen and (max-width: 61.9375em) {
+  .lock body {
+    overflow: hidden;
+  }
+
   .wireless__text {
     -ms-flex-preferred-size: 70%;
     flex-basis: 70%;
@@ -1540,6 +1570,11 @@ h2 {
   .header__body {
     -ms-flex-pack: justify;
     justify-content: space-between;
+  }
+
+  .menu-header__body {
+    top: 4.375rem;
+    height: calc(100% - 4.375rem);
   }
 
   .our-courses__grid {
