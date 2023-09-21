@@ -82,12 +82,14 @@
 	document.addEventListener('DOMContentLoaded', function() {
 		console.log('DOMContentLoaded!');
 		
-		Array.prototype.slice.call(document.querySelectorAll('[ data-signup')).forEach(function(item) {
-			item.onsubmit = function(e) {
-				e.preventDefault();
-				e.target.classList.add('form--sended');
-			}
-		});
+		if(document.querySelector('[data-signup') !== null){
+			Array.prototype.slice.call(document.querySelectorAll('[ data-signup')).forEach(function(item) {
+				item.onsubmit = function(e) {
+					e.preventDefault();
+					e.target.classList.add('form--sended');
+				}
+			});		
+		}
 
 		if(document.querySelector('.toggle-mnu') != null){
 			document.querySelector('.toggle-mnu').onclick = function(e) {
@@ -101,12 +103,42 @@
 
 	// выбор чекбоксов
 	document.onclick = function(e) {
+		// заполнение поля и прокрутка до формы подписки на курс
 		if(e.target.hasAttribute('data-check') || e.target.closest('[data-check]') !== null){
 		 	var parentForm = e.target.closest('[data-check-parent]'),
-		 		siblingInput = parentForm.querySelector('.hidden-input');
+		 		courseNameValue = parentForm.querySelector('.item-our-courses__title').innerText,
+		 		targetForm = document.forms.courseSignupForm;
+		 		// siblingInput = parentForm.querySelector('.hidden-input');
+
+			// Scroll to a certain element
+	 		if(courseNameValue !== null && targetForm !== null){
+				targetForm.elements.courseName.value = courseNameValue;
+				targetForm .scrollIntoView({ 
+				  behavior: 'smooth' 
+				});
+	 		}
 	 		
-	 		parentForm.classList.toggle('checked-item');
-	 		siblingInput.checked = !siblingInput.checked;
+	 		// parentForm.classList.toggle('checked-item');
+	 		// siblingInput.checked = !siblingInput.checked;
+		}
+		//END заполнение поля и прокрутка до формы подписки на курс
+
+		if(e.target.hasAttribute('data-register-check') || e.target.closest('[data-register-check]') !== null){
+		 	console.log(e.target)
+		 	var cashRegisterValue = e.target.closest('[data-register-check]').querySelector('.green-label__term').innerText,
+		 		targetForm = document.forms.cashRegisterForm;
+		 		// siblingInput = parentForm.querySelector('.hidden-input');
+
+			// Scroll to a certain element
+	 		if(cashRegisterValue !== null && targetForm !== null){
+				targetForm.elements.selectedCashRegister.value = cashRegisterValue;
+				targetForm .scrollIntoView({ 
+				  behavior: 'smooth' 
+				});
+	 		}
+	 		
+	 		// parentForm.classList.toggle('checked-item');
+	 		// siblingInput.checked = !siblingInput.checked;
 		}
 	}
 

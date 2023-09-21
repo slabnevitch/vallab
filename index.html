@@ -34,9 +34,6 @@
           <h2 class="title title--center">Наши курсы</h2>
           <div class="our-courses__grid">
             <article data-check-parent class="our-courses__item item-our-courses">
-              <div class="item-our-courses__checkbox">
-                <input type="checkbox" name="course-1" class="hidden-input">
-              </div>
               <div class="item-our-courses__img _fit"><img src="img/our-courses/1.jpg" alt="Обучение кассира" class="_fit-img">
               </div>
               <div class="item-our-courses__title">Обучение кассира</div>
@@ -44,9 +41,6 @@
               <div data-check class="item-our-courses__price green-box">3 000 Р</div>
             </article>
             <article data-check-parent class="our-courses__item item-our-courses">
-              <div class="item-our-courses__checkbox">
-                <input type="checkbox" name="course-2" class="hidden-input">
-              </div>
               <div class="item-our-courses__img _fit"><img src="img/our-courses/2.jpg" alt="Касса с нуля" class="_fit-img">
               </div>
               <div class="item-our-courses__title">Касса с нуля</div>
@@ -54,9 +48,6 @@
               <div data-check class="item-our-courses__price green-box">3 000 Р</div>
             </article>
             <article data-check-parent class="our-courses__item item-our-courses">
-              <div class="item-our-courses__checkbox">
-                <input type="checkbox" name="course-3" class="hidden-input">
-              </div>
               <div class="item-our-courses__img _fit"><span class="item-our-courses__labels"><span class="item-our-courses__label">Продвинутый</span></span><img src="img/our-courses/3.jpg" alt="Бухучет и касса" class="_fit-img">
               </div>
               <div class="item-our-courses__title">Бухучет и касса</div>
@@ -64,9 +55,6 @@
               <div data-check class="item-our-courses__price green-box">15 000 Р Р</div>
             </article>
             <article data-check-parent class="our-courses__item item-our-courses">
-              <div class="item-our-courses__checkbox">
-                <input type="checkbox" name="course-4" class="hidden-input">
-              </div>
               <div class="item-our-courses__img _fit"><span class="item-our-courses__labels"><span class="item-our-courses__label">Продвинутый</span></span><img src="img/our-courses/4.jpg" alt="Ответы налоговой" class="_fit-img">
               </div>
               <div class="item-our-courses__title">Ответы налоговой</div>
@@ -103,11 +91,11 @@
       </section>
       <div class="signup">
         <div class="signup__container">
-          <form action="#" data-signup class="form">
+          <form action="#" data-signup name="courseSignupForm" class="form">
             <div class="form__top">
               <div class="form__title">Запишись сейчас!</div>
               <input autocomplete="off" type="text" required name="" placeholder="Телефон" class="form__input form__input--phone">
-              <input autocomplete="off" type="text" required name="" placeholder="Курс" class="form__input">
+              <input autocomplete="off" type="text" required name="courseName" placeholder="Курс" class="form__input">
               <textarea placeholder="Отрасль (опционально)" class="form__input form__area"></textarea>
             </div>
             <button type="submit" class="form__send">Запишись и получи подарок</button>
