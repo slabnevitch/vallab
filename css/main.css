@@ -3975,6 +3975,10 @@ h2 {
     cursor: pointer;
   }
 
+  .fixed-block__gift {
+    cursor: pointer;
+  }
+
   .fixed-block__chat {
     cursor: pointer;
   }
@@ -4044,15 +4048,5 @@ h2 {
   .item-our-courses__price:hover {
     -ms-transform: translateY(-5%);
     transform: translateY(-5%);
-  }
-}
-
-@media (any-hover: none) {
-  .fixed-block__gift {
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .fixed-block__gift:hover {
-    animation-name: none;
   }
 }
