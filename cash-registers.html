@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <main class="main">
+    <main id="wrapper-for-scroll-fix" class="main">
       <header class="header header--wireless">
         <div class="header__wrapper">
           <div class="header__body header__container"><a href="#" class="header__logo logo-header"><span class="logo-header__img"><img src="img/logo.png" alt="logo"></span></a>
@@ -165,15 +165,41 @@
           <h2 class="title title--center">Нужно побыстрее?<br>Тогда звоните</h2>
         </div>
       </section>
-      <div class="fixed-block"><a href="#" class="fixed-block__gift animated tada infinite"><img src="img/gift.png" alt="alt"></a>
+      <div class="fixed-block"><span data-micromodal-open="gift-modal" class="fixed-block__gift animated tada infinite"><img src="img/gift.png" alt="alt"></span>
         <button class="fixed-block__chat"><img src="img/icons-svg/chat.svg" alt="alt"></button>
+      </div>
+      <div id="gift-modal" aria-hidden="true" class="modal modal-gift micromodal-slide">
+        <div tabindex="-1" data-micromodal-close class="modal__overlay">
+          <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title" class="modal-container">
+            <button aria-label="Close modal" data-micromodal-close class="modal__close"></button>
+            <main class="modal__content">
+              <form action="#" data-signup name="cashRegisterForm" class="form">
+                <div class="form__top">
+                  <!-- .form__title Вызвать консультанта-->
+                  <input autocomplete="off" type="text" required name="" placeholder="Телефон" class="form__input form__input--phone">
+                  <div class="form__select">
+                    <select data-searchdisable="true" class="fstdropdown-select ">
+                      <option value="0">ответы для Налоговой</option>
+                      <option value="1">разъяснения Налоговой спорных ситуаций</option>
+                      <option value="2">чек-лист проверки своих чеков</option>
+                      <option value="3">Тех.Задание для АйТи специалиста</option>
+                    </select>
+                  </div>
+                </div>
+              </form>
+            </main>
+          </div>
+        </div>
       </div>
       <footer class="footer"></footer>
     </main>
     
     
+    <script src="js/libs/service-functions/scrollWidth.js"></script>
     
     
+    <script src="js/libs/micromodal/micromodal.js"></script>
+    <script src="js/libs/fstdropdown/fstdropdown.min.js"></script>
     <script src="js/common.js"></script>
   </body>
 </html>

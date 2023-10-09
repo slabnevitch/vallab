@@ -79,9 +79,11 @@
 	}
 	// End ibg class
 
+
 	document.addEventListener('DOMContentLoaded', function() {
 		console.log('DOMContentLoaded!');
 		
+	// скрытие формы после отправки
 		if(document.querySelector('[data-signup') !== null){
 			Array.prototype.slice.call(document.querySelectorAll('[ data-signup')).forEach(function(item) {
 				item.onsubmit = function(e) {
@@ -90,6 +92,7 @@
 				}
 			});		
 		}
+	//END скрытие формы после отправки
 
 		if(document.querySelector('.toggle-mnu') != null){
 			document.querySelector('.toggle-mnu').onclick = function(e) {
@@ -144,6 +147,36 @@
 
 	//END выбор чекбоксов
 
-	// скрытие формы после отправки
-	//END скрытие формы после отправки
+// micromodal
+	if(document.querySelector('.modal') !== null){
+		MicroModal.init({
+			openTrigger: 'data-micromodal-open', 
+			closeTrigger: 'data-micromodal-close',
+			openClass: 'is-open', 
+			disableFocus: true, 
+			awaitOpenAnimation: true,
+			awaitCloseAnimation: true,
+			disableScroll: true,
+			onShow: function(modal, trigger, event){
+
+				// console.log(trigger)
+				// console.log(event)
+				// console.log(modal)	
+				
+				// при disableScroll: true для компенсации ширины скроллбара (фикс "прыгания" страницы влево)
+				document.querySelector('#wrapper-for-scroll-fix').classList.add('modal-open');
+
+			},
+			onClose: function(modal) {
+				// console.info(`${modal.id} is hidden`);
+				
+				// при disableScroll: true для компенсации ширины скроллбара (фикс "прыгания" страницы влево)
+				document.querySelector('#wrapper-for-scroll-fix').classList.remove('modal-open');
+
+			}
+		});		
+	}
+	// END micromodal
+
+
 })();
