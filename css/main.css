@@ -3525,10 +3525,6 @@ h2 {
 }
 
 @media only screen and (min-width: 70.9375em) {
-  .menu-header__body {
-    left: calc((100% - 1135px) / 2);
-  }
-
   .top-section__image {
     -ms-flex-negative: 0;
     flex-shrink: 0;
@@ -3638,6 +3634,7 @@ h2 {
 @media only screen and (max-width: 85.37375em) {
   .menu-header__body {
     top: 7.5rem;
+    left: calc((100% - 1135px) / 2);
   }
 
   .menu-header__body .menu {
@@ -3789,6 +3786,10 @@ h2 {
 }
 
 @media only screen and (max-width: 70.9375em) {
+  .menu-header__body {
+    left: 0;
+  }
+
   .menu-header__body .menu {
     padding-left: 15px;
   }
