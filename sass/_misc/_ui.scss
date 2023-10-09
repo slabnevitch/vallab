@@ -1,0 +1,293 @@
+/*--------------------ui----------------------*/
+h1,h2{
+  margin: 0;
+  font-weight: 600;
+}
+.title{
+  @include adaptive-value-rem('font-size', 50, 30, $maxWidth, $minWidth, 1);
+  @include adaptive-value-rem('margin-bottom', 63, 24, $maxWidth, $minWidth, 1);
+  font-size: rem(50);
+  line-height: 108.4%;
+  color: $title;
+
+  &--center{
+    text-align: center;
+  }
+}
+.tag {
+	flex-shrink: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: rem(50);
+  border-radius: 50px;
+border: 1px solid #5A5A5A;
+  color: $text;
+  text-decoration: none;
+  padding: rem(5) rem(30);
+  font-size: rem(15);
+  text-align: center;
+  outline: none;
+  transition: all .3s ease;
+  background-color: #fff;
+
+  @media (any-hover: hover) { //только для устройств с ховером
+      cursor: pointer;
+      &:hover{
+        color: #fff;
+        border-color: transparent;
+        background-color: $accent;
+      }
+    } 
+}
+.green-box{
+  display: inline-flex;
+  min-height: 79px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px 30px;
+  color: #fff;
+  border-radius: rem(20);
+  background-color: $accent;
+  box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.25);
+  
+  &:hover{
+     background-color: lighten($accent, 5%);
+  }
+   
+  &:active{
+   background-color: darken($accent, 5%);
+
+  }
+}
+.sect-header{
+   @include adaptive-value-rem('margin-bottom', 60, 30, $maxWidth, $minWidth, 1);
+  text-align: center;
+  .title{
+    margin-bottom: rem(23);
+  }
+  &__caption{
+    margin: 0;
+    max-width: rem(876);
+     @include adaptive-value-rem('font-size', 30, 20, $maxWidth, $minWidth, 1);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.form {
+  max-width: rem(914);
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  text-align: center;
+}
+.form__top {
+  padding-top: rem(37);
+  margin-bottom: rem(51);
+  @include adaptive-value-rem('padding-bottom', 62, 30, $maxWidth, $minWidth, 1);
+  @include adaptive-value-rem('padding-left', 92, 30, $maxWidth, $minWidth, 1);
+  @include adaptive-value-rem('padding-right', 92, 30, $maxWidth, $minWidth, 1);
+  background-color: $accent;
+  border-radius: rem(20);
+  box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.25);
+
+  .form--sended &{
+    display: none;
+  }
+}
+.form__title {
+  @include adaptive-value-rem('margin-bottom', 48, 20, $maxWidth, $minWidth, 1);
+  @include adaptive-value-rem('font-size', 40, 30, $maxWidth, $minWidth, 1);
+  font-weight: 600;
+  text-align: center;
+}
+.form__input {
+  display: flex;
+  align-items: center;
+  height: rem(70);
+  padding: rem(5) rem(22);
+  background-color: #fff;
+  font-size: rem(20);
+  border-radius: rem(20);
+  @include placecolor(rgba(90, 90, 90, 0.49));
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  
+  &:not(:last-child){
+    margin-bottom: rem(25);
+  }
+
+  &--phone{
+    max-width: rem(344);
+  }
+
+}
+.form__area {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding-top: rem(26);
+  min-height: rem(175);
+  font-family: 'Montserrat', sans-serif;
+}
+.form__send {
+  @include but-null();
+  display: inline-flex;
+  align-items: center;
+  padding: rem(5) rem(60);
+  min-height: rem(79);
+  margin-bottom: rem(37);
+  background-color: $accent;
+  color: #fff;
+  border-radius: rem(20);
+   @include adaptive-value-rem('font-size', 30, 18, $maxWidth, $minWidth, 1);
+  font-weight: 600;
+
+  @include max-screen($xs){
+     padding: rem(5) rem(20);
+  }
+
+  @media (any-hover: hover) { //только для устройств с ховером
+      cursor: pointer;
+      &:hover{
+         background-color: lighten($accent, 5%);
+      }
+      &:active{
+       background-color: darken($accent, 5%);
+      }
+    }
+  .form--sended &{
+    display: none;
+  }
+}
+.form__regard{
+  display: none;
+   padding-top: rem(37);
+   margin-bottom: rem(51);
+  @include adaptive-value-rem('margin-bottom', 40, 30, $maxWidth, $minWidth, 1);
+  @include adaptive-value-rem('padding-bottom', 40, 30, $maxWidth, $minWidth, 1);
+  @include adaptive-value-rem('padding-left', 92, 30, $maxWidth, $minWidth, 1);
+  @include adaptive-value-rem('padding-right', 92, 30, $maxWidth, $minWidth, 1);
+  border-radius: rem(20);   
+  background-color: $accent;
+
+  .form--sended &{
+    display: block;
+  }
+  .form__title{
+    margin-bottom: 0;
+  }
+}
+.green-label {
+  display: block;
+  position: relative;
+  @include min-screen($sm){
+    min-width: rem(285);
+    
+  }
+  @include max-screen($sm){
+    width: 100%;
+  }
+}
+.green-labes__input {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: rem(17);
+  margin-top: rem(-10);
+  width: rem(20);
+  height: rem(20);
+  visibility: hidden;
+
+  &:checked{
+    visibility: visible;
+    & + .green-label__box{
+      background-color: darken($accent, 10%);
+      .green-label__check-wrap{
+        visibility: visible;
+      }
+    } 
+  }
+}
+.green-label__box {
+  width: 100%;
+  position: relative;
+  flex-direction: column;
+  padding-top: rem(15);
+  padding-bottom: rem(15);
+  font-weight: 600;
+
+  @media (any-hover: hover) { //только для устройств с ховером
+    cursor: pointer;
+  }
+}
+.green-label__term {
+  margin-bottom: rem(10);
+  font-size: rem(20);
+  @include max-screen($xss){
+    font-size: rem(15);
+  }
+
+}
+.green-label__price {
+  font-size: rem(25);
+  @include max-screen($xss){
+    font-size: rem(20);
+  }
+}
+.green-label__check-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(40);
+  height: rem(40);
+  position: absolute;
+  left: rem(10);
+  top: 50%;
+  margin-top: rem(-20);
+  background-color: #fff;
+  border-radius: 50%;
+  visibility: hidden;
+}
+.marked-list__item {
+  position: relative;
+  padding-left: rem(63);
+  list-style-type: none;
+  font-size: rem(35);
+
+  @include max-screen($sm){
+    padding-left: rem(39);
+  }
+
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: rem(48);
+    height: rem(48);
+    margin-right: rem(10);
+    vertical-align: middle;
+    background-image: url(../img/icons-svg/check.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include max-screen($sm){
+      width: rem(24);
+      height: rem(24);
+    }
+  }
+
+  &:not(:last-child){
+    margin-bottom: rem(30);
+  }
+
+  @include max-screen($sm){
+    font-size: rem(18);
+    margin-bottom: rem(10);
+  }
+
+}
+/*--------------------END ui----------------------*/ 

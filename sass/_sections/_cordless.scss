@@ -1,0 +1,80 @@
+/*--------------------wireless----------------------*/
+.wireless {
+	padding-top: rem(28);
+}
+.wireless__container {
+	position: relative;
+	display: flex;
+	column-gap: rem(30);
+	row-gap: rem(20);
+
+	@include max-screen($sm){
+		
+		flex-wrap: wrap;
+	}
+
+	&:after{
+		content: '';
+		position: absolute;
+		top: 30%;
+		right: prc(-336, $maxWidthContainer);
+		width: rem(791);
+		height: rem(747);
+		border-radius: 100%;
+		background: rgba(188, 211, 77, 0.40);
+		filter: blur(125px);
+	}
+}
+.wireless__text {
+	@include adaptive-value-rem('padding-top', 100, 0, $maxWidth, $minWidth, 1);
+	position: relative;
+	z-index: 2;
+	flex: 0 0 prc(800, $maxWidthContainer);
+	.title {
+		@include adaptive-value-rem('margin-bottom', 48, 25, $maxWidth, $minWidth, 1);
+	}
+	@include max-screen($md){
+		flex-basis: 70%;
+	}
+	@include max-screen($sm){
+		flex-basis:100%;
+	}
+}
+.wireless__descr {
+	@include adaptive-value-rem('font-size', 35, 18, $maxWidth, $minWidth, 1);	
+}
+.wireless__image {
+	position: relative;
+	z-index: 2;
+	flex: 0 0 prc(303, $maxWidthContainer);
+	padding-bottom: 100%;
+
+	@include min-screen($sm){
+		padding-bottom: 40%;
+		
+	}
+	@include max-screen($md){
+		flex-basis: 30%;
+	}
+	@include max-screen($sm){
+		flex-basis: 100%;
+	}
+
+	img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: prc(517, 303);
+
+		@include min-screen($sm){
+			
+			left: rem(-40);
+		}
+		
+		@include max-screen($sm){
+			width: 100%;	
+		}
+	}
+}
+/*--------------------END wireless----------------------*/ 

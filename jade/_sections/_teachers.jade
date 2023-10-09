@@ -1,0 +1,14 @@
+section.teachers
+	.teachers__container
+		.sect-header
+			h2.title Наши преподаватели
+			p.sect-header__caption Благодаря своему опыту мы умеем рассказывать сложные вещи простыми словами
+
+		.teachers__cards
+			- const teachers = [{name: 'Иван Мочалов', p: 'Эксперт по чекам. 15 лет аудитор и консультант. Защитил 43 группы компаний в выездных проверках по 54-ФЗ'}, {name: 'Екатерина Македонская', p: 'Эксперт по кассам. 7 лет в поддержке кассиров, расчетчиков и бухгалтеров'}, {name: 'Владислав Глушков', p: 'Эксперт по расчету и сверкам. 1126 решенных кейсов и сверок бухучета и чеков в 2023 году'}];
+			each item,i in teachers
+				article.teachers__card.card-teachers
+					.card-teachers__img._fit
+						img._fit-img(src="img/teachers/"+(i+1)+".jpg" alt="alt")
+					.card-teachers__name= item.name
+					.card-teachers__descr= item.p

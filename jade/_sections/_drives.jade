@@ -1,0 +1,22 @@
+section.drives
+	.drives__container
+		h2.title.title--center Фискальные накопители
+		.drives__content
+			.drives__image
+				img(src="img/drive.jpg" alt="alt")
+			.drives__features.features-drives
+				ul.features-drives__list.marked-list
+					- let fetures = ['Замена ФН в день обращения', 'Работаем по всей России', 'Минимальный пакет документов'];
+					each item in fetures
+						li.marked-list__item= item
+
+				.features-drives__checkboxes
+					- let checks = [{term: 'на 15 месяцев', summ:'10 000 Р'}, {term: 'на 36 месяцев', summ:'15 000 Р'}];
+
+					each check, i in checks
+						label.green-label(data-register-check)
+							//- input(type="checkbox" name="drive-" + (i+1) class="green-labes__input")
+							span.green-label__box.green-box
+								span.green-label__check-wrap
+								span.green-label__term= check.term
+								span.green-label__price= check.summ

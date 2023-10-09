@@ -1,0 +1,17 @@
+section.our-courses
+	.our-courses__container
+		h2.title.title--center Наши курсы
+		.our-courses__grid
+			- const arts = [{name: 'Обучение кассира', p:'Как проводить реестры оплат, снимать отчет, чеки по безналу. Исправление чеков', price: '3 000 Р'}, {name: 'Касса с нуля', p:'Самостоятельная регистрация. Подключение к ОФД, 1С и банку. Замена ФН. Работа с удаленки', price: '3 000 Р'}, {name: 'Бухучет и касса', p:'Сверка по 51, 62 и 90 счетами и не только. Транзиты, льготы, НДС. Налог на прибыль. Коррекция в конце квартала', price: '15 000 Р Р'}, {name: 'Ответы налоговой', p:'Как налоговая анализирует. Опасные ошибки. Практика проверок по 54-ФЗ', price: '25 000 Р Р'}];
+			each item,i in arts
+				article.our-courses__item.item-our-courses(data-check-parent)
+					//- .item-our-courses__checkbox
+					//- 	input(type="checkbox" name="course-"+(i+1) class="hidden-input")
+					.item-our-courses__img._fit
+						if i>1
+							span.item-our-courses__labels
+								span.item-our-courses__label Продвинутый
+						img._fit-img(src="img/our-courses/"+(i+1)+".jpg"  alt=item.name)
+					.item-our-courses__title= item.name
+					.item-our-courses__descr= item.p
+					.item-our-courses__price.green-box(data-check)= item.price

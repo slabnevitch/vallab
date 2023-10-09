@@ -1,0 +1,56 @@
+/*--------------------registers----------------------*/
+.registers {
+	position: relative;
+	@include adaptive-value-rem('padding-bottom', 70, 40, $maxWidth, $minWidth, 1);
+}
+.registers__container {}
+.registers__cards {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 rem(-37 / 2);
+	row-gap: rem(20);
+}
+.register__card {
+	padding: rem(10) rem(23) rem(38) rem(23);
+	width: calc(100% / 3 - rem(37));
+	margin-left: rem(37 / 2);
+	margin-right: rem(37 / 2);
+	border-radius: rem(20);
+	background: #FFF;
+	box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.25);
+	text-align: center;
+
+	@include max-screen($md){
+		width: calc(100% / 2 - rem(37));
+	}
+	@include max-screen($sm){
+		width: 100%;
+	}	
+}
+.card-register {}
+.card-register__img {
+	margin-left: rem(19);
+	margin-right: rem(33);
+	height: 0;
+	position: relative;
+	padding-bottom: prc(197,246);
+	margin-bottom: rem(5);
+
+	img{
+		@include absolute-center;
+	}
+}
+.card-register__name {
+	margin-bottom: rem(16);
+	font-size: rem(30);
+	font-weight: 600;
+}
+.card-register__features {
+	margin-bottom: rem(19);
+	font-size: rem(25);
+}
+.card-register__price {
+	font-size: rem(30);
+	font-weight: 600;
+}
+/*--------------------END registers----------------------*/ 

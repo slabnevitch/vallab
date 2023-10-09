@@ -1,0 +1,13 @@
+section.registers
+	.registers__container
+		h2.title.title--center Онлайн-кассы
+
+		.registers__cards
+			- const cards = ['Эвотор', 'Атол', 'Валлаб'];
+			each item in cards
+				article.register__card.card-register
+					.card-register__img
+						img(src="img/atoll.png" alt="atol")
+					.card-register__name= item
+					.card-register__features смарт-терминал с 5-дюймовым сенсорным экраном
+					.card-register__price 16 000Р

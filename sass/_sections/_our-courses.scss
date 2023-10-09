@@ -1,0 +1,142 @@
+/*--------------------our-courses----------------------*/
+.our-courses {
+	@include adaptive-value-rem('padding-bottom', 100, 50, $maxWidth, $minWidth, 1);
+}
+.our-courses__container {
+	max-width: rem(978);
+	.title {
+		@include adaptive-value-rem('margin-bottom', 78, 24, $maxWidth, $minWidth, 1);
+	}
+
+}
+.our-courses__grid {
+	display: flex;
+	flex-wrap: wrap;
+
+	// @include adaptive-value-rem('margin-left', -44, -15, $maxWidth, $minWidth, 1);
+	// @include adaptive-value-rem('margin-right', -44, -15, $maxWidth, $minWidth, 1);
+	@include adaptive-value-rem('row-gap', 100, 30, $maxWidth, $minWidth, 1);
+	// @include adaptive-value-rem('column-gap', 88, 30, $maxWidth, $minWidth, 1);
+	column-gap: rem(88);
+
+	@include max-screen($md){
+		column-gap: rem(30);	
+	}
+}
+.our-courses__item {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: calc(50% - rem(44));
+	// flex-: 0 0 calc(50% - rem(44));
+	text-decoration: none;
+
+	@include max-screen($md){
+		width: calc(50% - rem(15));
+		
+	}
+
+	@include max-screen($xs){
+		
+		width: 100%;
+	}
+
+	&.checked-item{
+		.item-our-courses__checkbox{
+			visibility: visible;
+		}
+		.item-our-courses__price {
+			transform: translateY(-5%);
+			background-color: darken($accent, 5%);
+		}
+	}
+}
+.item-our-courses__labels{
+	z-index: 2;
+	position: absolute;
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	gap: rem(10);
+	top: rem(22);
+	right: rem(30);
+	@include max-screen($xs){
+
+		right: rem(10);
+	}
+}
+.item-our-courses__label{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: rem(8) rem(20);
+	min-height: rem(46);
+	color: #fff;
+	font-size: rem(20);
+	background-color: $title;
+	border-radius: rem(30);
+
+	@include max-screen($xs){
+		min-height: rem(30);
+		font-size: rem(14);
+		padding: rem(5) rem(10);
+		right: rem(5);
+	}
+}
+.item-our-courses__img {
+	padding-bottom: prc(277,445);
+	margin-bottom: rem(15);
+	border-radius: rem(20);
+	overflow: hidden;
+	box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.25);
+	transition: opacity, 0.5s;
+}
+.item-our-courses__title {
+	margin-bottom: rem(15);
+	@include adaptive-value-rem('font-size', 25, 20, $maxWidth, $minWidth, 1);
+	font-weight: 600;
+	color: $title;
+}
+.item-our-courses__descr {
+	font-size: rem(20);
+	@include max-screen($sm){
+		font-size: rem(18);
+	}
+	&:not(:last-child){
+		margin-bottom: rem(28);
+	}
+
+}
+.item-our-courses__price {
+	margin-top: auto;
+	align-self: start;
+	min-width: 250px;
+	font-size: rem(30);
+	font-weight: 600;
+	transition: all 0.3s;
+
+	@media (any-hover: hover) { //только для устройств с ховером
+		cursor: pointer;
+		&:hover{
+			transform: translateY(-5%);
+		}
+	}
+
+}
+.item-our-courses__checkbox{
+	visibility: hidden;
+	position: absolute;
+	width: rem(50);
+	height: rem(50);
+	top: rem(20);
+	left: rem(20);
+	background-color: #fff;
+	border-radius: 50%;
+	z-index: 3;
+}
+.hidden-input{
+	@include absolute-center;
+	height: rem(20);
+	margin: 0;
+}
+/*--------------------END our-courses----------------------*/ 

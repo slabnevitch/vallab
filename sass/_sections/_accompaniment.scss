@@ -1,0 +1,12 @@
+/*--------------------accompaniment----------------------*/
+.accompaniment{
+	@include adaptive-value-rem('padding-bottom', 63, 40, $maxWidth, $minWidth, 1);
+}
+.accompaniment__content{
+
+	@include min-screen($xs){
+		padding: 0 rem(30);
+		
+	}
+}
+/*--------------------END accompaniment----------------------*/ 

@@ -1,0 +1,28 @@
+section.operators
+	.operators__container
+		.sect-header
+			h2.title.title--center Любой оператор ОФД
+			.sect-header__caption Настройка сразу в день оплаты
+
+		.operators__content
+			.operators__image
+				img(src="img/operators/ofd.png" alt="alt")
+			.operators__checkboxes
+				- let items = [{term: 'Подключение ОФД', summ:'700 Р'}, {term: 'Продление ОФД', summ:'400 Р'}, {term: 'Восстановление ОФД', summ:'600 Р'}];
+
+					each check, i in items
+						label.green-label(data-register-check)
+							//-input(type="checkbox" name="drive-" + (i+1) class="green-labes__input")
+							span.green-label__box.green-box
+								span.green-label__check-wrap
+								span.green-label__term= check.term
+								span.green-label__price= check.summ
+		.guarantees
+			- const guarantees = [{name: 'Прямой договор', text: 'Настроим, зарегистрируем и подключим к 1С. Не перекупы'}, {name: 'Гарантируем', text: '100% компенсация штрафов от налоговой'}, {name: 'Удаленно', text: 'Подключимся удаленно'}];
+			each item, i in guarantees
+				.guarantee
+					.guarantee__icon
+						img(src="img/operators/icons/"+(i+1)+".svg" alt="alt")
+					.guarantee__title= item.name
+					.guarantee__text= item.text
+
