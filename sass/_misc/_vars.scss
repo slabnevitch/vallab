@@ -17,15 +17,15 @@ $svg: '../img/icons-svg/';
 
 
 // media
-$lg: em($maxWidthContainer);
-$mobMenu: em(1365.98);
-$md: em(991);
-$sm: em(767.98);
-$xs: em(576);
-$xss: em(480);
-$xsss: em(375);
-$min: em(360);
-$mins: em(320);
+$lg: #{$maxWidthContainer + 'px'};
+$mobMenu: 1365.98px;
+$md: 991px;
+$sm: 767.98px;
+$xs: 576px;
+$xss: 480px;
+$xsss:375px;
+$min: 360px;
+$mins: 320px;
 
 // point for multilevel-pnel | размер, на котором multilevel-dropdown превращается в multilevel-panel и наоборот
 $multilevelPoint: 1100px;

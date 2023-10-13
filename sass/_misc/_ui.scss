@@ -144,6 +144,24 @@ border: 1px solid #5A5A5A;
    @include adaptive-value-rem('font-size', 30, 18, $maxWidth, $minWidth, 1);
   font-weight: 600;
 
+  &--wht{
+    color: $accent;
+    background-color: #fff;
+
+    @media (any-hover: hover) { //только для устройств с ховером
+      &:hover{
+       background-color: darken($accent, 5%);
+
+         color: #fff;
+      }
+      &:active{
+       background-color: darken($accent, 5%);
+       color: #fff;
+      }
+    }
+    
+  }
+
   @include max-screen($xs){
      padding: rem(5) rem(20);
   }
@@ -160,6 +178,9 @@ border: 1px solid #5A5A5A;
   .form--sended &{
     display: none;
   }
+}
+.form__select{
+  margin-bottom: rem(30);
 }
 .form__regard{
   display: none;

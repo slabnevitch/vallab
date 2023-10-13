@@ -31,15 +31,21 @@
 	// flex-: 0 0 calc(50% - rem(44));
 	text-decoration: none;
 
+	// @media only screen and (max-width : $md){
+	// 	width: calc(50% - rem(15));
+	// }
+	// @media only screen and (max-width : $xs){
+	// 		width: 100%;
+	// }
 	@include max-screen($md){
 		width: calc(50% - rem(15));
 		
 	}
-
 	@include max-screen($xs){
 		
 		width: 100%;
 	}
+
 
 	&.checked-item{
 		.item-our-courses__checkbox{
