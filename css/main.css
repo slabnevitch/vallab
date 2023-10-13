@@ -2618,8 +2618,17 @@ h2 {
   font-weight: 600;
 }
 
+.form__send--wht {
+  color: #BCD34D;
+  background-color: #fff;
+}
+
 .form--sended .form__send {
   display: none;
+}
+
+.form__select {
+  margin-bottom: 1.875rem;
 }
 
 .form__regard {
@@ -4000,6 +4009,16 @@ h2 {
 
   .form__send {
     cursor: pointer;
+  }
+
+  .form__send--wht:hover {
+    background-color: #b4ce39;
+    color: #fff;
+  }
+
+  .form__send--wht:active {
+    background-color: #b4ce39;
+    color: #fff;
   }
 
   .form__send {
